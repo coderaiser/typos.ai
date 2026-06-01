@@ -2,7 +2,7 @@
   "name": "typos.ai",
   "version": "1.0.9",
   "description": "CLI tool to run fix after typos",
-  "main": "lib/typos.js",
+  "main": "lib/resolve-event.js",
   "type": "module",
   "scripts": {
     "test": "madrun test",
