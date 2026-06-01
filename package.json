@@ -1,5 +1,5 @@
 {
-  "name": "typos.io",
+  "name": "typos.ai",
   "version": "1.0.3",
   "description": "CLI tool to run fix after typos",
   "main": "lib/typos.js",
