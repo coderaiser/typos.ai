@@ -20,7 +20,8 @@ npm i typos.ai -g
 # Usage
 
 ```sh
-typos --write-changes --format json | API_KEY=your-api-key typos.ai
+$ export API_KEY=your-api-key
+$ typos --write-changes --format json | typos.ai
 ```
 
 ## License
