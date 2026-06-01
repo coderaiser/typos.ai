@@ -22,7 +22,7 @@ npm i typos.ai -g
 # Usage
 
 ```sh
-typos --write-changes --format json | typos.ai
+typos --write-changes --format json | API_KEY=your-api-key typos.ai
 ```
 
 ## License

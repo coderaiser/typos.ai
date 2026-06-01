@@ -1,6 +1,8 @@
+#!/usr/bin/env node
 import {join} from 'node:path';
 import process, {cwd} from 'node:process';
 import {readFile} from 'node:fs/promises';
+
 import {readStdin} from 'redstd';
 import {resolveEvent} from '../lib/typos.js';
 
