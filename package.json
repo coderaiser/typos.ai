@@ -19,7 +19,7 @@
     "url": "git+https://github.com/coderaiser/typos.ai.git"
   },
   "bin": {
-    "typos.io": "bin/typos.js"
+    "typos.ai": "bin/typos.js"
   },
   "keywords": [
     "typos",
