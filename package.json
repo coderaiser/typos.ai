@@ -1,19 +1,78 @@
 {
   "name": "typos.io",
   "version": "1.0.0",
-  "description": "",
-  "main": "1.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "CLI tool to run fix after typos",
+  "main": "lib/typos.js",
   "type": "module",
+  "scripts": {
+    "test": "madrun test",
+    "watch:test": "madrun watch:test",
+    "lint": "madrun lint",
+    "fresh:lint": "madrun fresh:lint",
+    "lint:fresh": "madrun lint:fresh",
+    "fix:lint": "madrun fix:lint",
+    "coverage": "madrun coverage",
+    "report": "madrun report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderaiser/typos.git"
+  },
+  "bin": {
+    "typos": "bin/typos.js"
+  },
+  "keywords": [
+    "typos",
+    "scripts",
+    "package",
+    "npm",
+    "npm run",
+    "npm-scripts",
+    "tool",
+    "cli",
+    "command",
+    "task",
+    "parallel",
+    "serial",
+    "run",
+    "commandline"
+  ],
+  "author": "coderaiser <mnemonic.enemy@gmail.com> (http://coderaiser.github.io/)",
+  "bugs": {
+    "url": "https://github.com/coderaiser/typos/issues"
+  },
+  "homepage": "https://github.com/coderaiser/typos",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
-    "redstd": "^1.0.2",
-    "try-catch": "^4.0.9",
-    "try-to-catch": "^4.0.5",
-    "zod": "^4.4.3"
+    "@putout/cli-choose": "^4.0.0",
+    "@putout/engine-reporter": "^8.0.2",
+    "@putout/formatter-dump": "^7.0.0",
+    "all-object-keys": "^3.0.0",
+    "enquirer": "^2.3.6",
+    "find-up": "^8.0.0",
+    "jessy": "^5.0.0",
+    "mapsome": "^1.0.0",
+    "montag": "^2.0.1",
+    "once": "^1.4.0",
+    "putout": "^42.0.0",
+    "try-catch": "^4.0.1",
+    "try-to-catch": "^4.0.0",
+    "yargs-parser": "^22.0.0"
+  },
+  "devDependencies": {
+    "@putout/formatter-json": "^3.0.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-putout": "^31.0.0",
+    "nodemon": "^3.0.1",
+    "redlint": "^6.0.0",
+    "runsome": "^1.0.0",
+    "superc8": "^12.2.4",
+    "supertape": "^13.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
