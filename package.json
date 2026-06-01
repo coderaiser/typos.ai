@@ -1,6 +1,6 @@
 {
   "name": "typos.ai",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI tool to run fix after typos",
   "main": "lib/typos.js",
   "type": "module",
