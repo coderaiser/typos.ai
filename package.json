@@ -1,0 +1,19 @@
+{
+  "name": "typos.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "redstd": "^1.0.2",
+    "try-catch": "^4.0.9",
+    "try-to-catch": "^4.0.5",
+    "zod": "^4.4.3"
+  }
+}

@@ -1,0 +1,11 @@
+*.swp
+*.log
+*.lock
+*.bin
+
+.idea
+.DS_Store
+.filesystem.json
+
+node_modules
+coverage
