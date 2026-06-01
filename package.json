@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderaiser/typos.git"
+    "url": "git+https://github.com/coderaiser/typos.io.git"
   },
   "bin": {
     "typos.io": "bin/typos.js"
