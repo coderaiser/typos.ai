@@ -12,7 +12,11 @@
 CLI tool to fix typos after [`typos`](https://github.com/crate-ci/typos), for cases like:
 
 ```
-`Deply` should be `Deploy`, `Deeply`
+error: `Deply` should be `Deploy`, `Deeply`
+  ╭▸ 1.md:1:1
+  │
+1 │ Deply the code to production
+  ╰╴━━━━━
 ```
 
 When context neaded to figure out for the world should be placed instead.
