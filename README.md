@@ -9,7 +9,13 @@
 [CoverageURL]: https://coveralls.io/github/coderaiser/typos.ai?branch=master
 [CoverageIMGURL]: https://coveralls.io/repos/coderaiser/typos.ai/badge.svg?branch=master&service=github
 
-CLI tool to fix typos after [`typos`](https://github.com/crate-ci/typos).
+CLI tool to fix typos after [`typos`](https://github.com/crate-ci/typos), for cases like:
+
+```
+`Deply` should be `Deploy`, `Deeply`
+```
+
+When context neaded to figure out for the world should be placed instead.
 
 ## Install
 
