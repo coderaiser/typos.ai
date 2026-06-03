@@ -19,7 +19,7 @@ error: `Deply` should be `Deploy`, `Deeply`
   ╰╴━━━━━
 ```
 
-When context neaded to figure out for the world should be placed instead.
+When context needed to figure out for the world should be placed instead.
 
 ## Install
 
