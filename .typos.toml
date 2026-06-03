@@ -2,4 +2,4 @@
 extend-exclude = ["ChangeLog"]
 
 [default.extend-words]
-Deply="Deply"
+Deply = "Deply"

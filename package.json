@@ -47,6 +47,7 @@
     "node": ">=22"
   },
   "dependencies": {
+    "chalk": "^5.6.2",
     "redstd": "^1.0.2",
     "try-catch": "^4.0.1",
     "try-to-catch": "^4.0.0",
