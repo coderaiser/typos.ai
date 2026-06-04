@@ -18,8 +18,10 @@ runs:
     - name: Install
       shell: bash
       run: |
-        bun i palabra typos.ai -g --no-save 1> /dev/null
-        palabra i typos 1> /dev/null
+        echo "::group::Install"
+        bun i palabra typos.ai -g --no-save
+        palabra i typos
+        echo "::endgroup::"
     - name: Run typos
       shell: bash
       run: typos.ai
