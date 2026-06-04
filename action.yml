@@ -1,29 +1,28 @@
 name: Typos AI
 description: Run typos.ai checks
-
 inputs:
   key:
+    description: ai key
     required: true
-
   run:
     required: false
     default: "1"
-
+    description: Run typos
 runs:
   using: composite
-
   steps:
-    - uses: oven-sh/setup-bun@v2
+    - name: Install Bun
+      uses: oven-sh/setup-bun@v2
       with:
         bun-version: latest
-
-    - shell: bash
+    - name: Install palabra typos.ai
+      shell: bash
       run: bun i palabra typos.ai -g --no-save
-
-    - shell: bash
+    - name: Install typos
+      shell: bash
       run: palabra i typos
-
-    - shell: bash
+    - name: Run typos
+      shell: bash
       run: typos.ai
       env:
         TYPOS_AI_KEY: ${{ inputs.key }}
