@@ -11,20 +11,17 @@ inputs:
 runs:
   using: composite
   steps:
-    - shell: bash
-      run: echo "::group::Install"
     - name: Install Bun
       uses: oven-sh/setup-bun@v2
       with:
         bun-version: latest
-    - name: Install palabra typos.ai
+    - name: Install
       shell: bash
-      run: bun i palabra typos.ai -g --no-save
-    - name: Install typos
-      shell: bash
-      run: palabra i typos
-    - shell: bash
-      run: echo "::endgroup::"
+      run: |
+          echo "::group::Install"
+          bun i palabra typos.ai -g --no-save
+          palabra i typos
+          echo "::endgroup::"
     - name: Run typos
       shell: bash
       run: typos.ai
