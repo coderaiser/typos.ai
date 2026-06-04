@@ -2,6 +2,7 @@
 *.config.*
 *.log
 *.lock
+action.yml
 
 .*
 
