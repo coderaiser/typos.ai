@@ -57,6 +57,7 @@
     "@putout/formatter-json": "^3.0.0",
     "eslint": "^10.0.0",
     "eslint-plugin-putout": "^31.0.0",
+    "escover": "^6.5.2",
     "madrun": "^13.0.2",
     "nodemon": "^3.0.1",
     "redlint": "^6.0.0",

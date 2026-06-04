@@ -11,6 +11,7 @@ export default {
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),
     'fix:lint': () => run('lint', '--fix'),
-    'coverage': async () => [env, `c8 ${await run('test')}`],
+    'coverage:c8': async () => [env, `c8 ${await run('test')}`],
+    'coverage': async () => [env, `escover "${await run('test')}"`],
     'report': () => 'c8 report --reporter=lcov',
 };
