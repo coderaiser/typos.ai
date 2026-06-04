@@ -23,7 +23,7 @@ await typos({
         logReject,
         logRetry,
         logError,
-        log: console.log,
+        log: (a) => console.log(chalk.red(a)),
     },
 });
 
