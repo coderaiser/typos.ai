@@ -15,11 +15,12 @@ runs:
       uses: oven-sh/setup-bun@v2
       with:
         bun-version: latest
-    - name: Install typos.ai
-      shell: bash
+    - shell: bash
       run: |
+        echo "::group::Install"
         bun i palabra typos.ai -g --no-save
         palabra i typos
+        echo "::endgroup::"
     - shell: bash
       run: typos.ai
       env:
