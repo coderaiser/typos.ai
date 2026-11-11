@@ -1,8 +1,8 @@
 {
   "name": "typos.ai",
   "version": "1.1.9",
-  "description": "CLI tool to run fix after typos",
-  "main": "lib/llm/decide.js",
+  "description": "CLI tool that resolves ambiguous typos found by typos using a small local language model",
+  "main": "lib/typos.js",
   "type": "module",
   "scripts": {
     "test": "madrun test",
@@ -48,10 +48,9 @@
   },
   "dependencies": {
     "chalk": "^6.0.1",
+    "node-llama-cpp": "3.22.3",
     "redstd": "^1.0.2",
-    "try-catch": "^4.0.1",
-    "try-to-catch": "^4.0.0",
-    "zod": "^4.4.3"
+    "try-to-catch": "^4.0.0"
   },
   "devDependencies": {
     "@putout/formatter-json": "^3.0.0",

@@ -4,9 +4,11 @@
 *.lock
 
 .*
+.github
 
 action.yml
 
 test
 fixture
 coverage
+eval

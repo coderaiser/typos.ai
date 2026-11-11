@@ -10,6 +10,7 @@
         "**/fixture",
         "**/printer-*",
         "**/nemesis",
+        "**/eval",
         "*.config.js",
         "coverage"
     ],

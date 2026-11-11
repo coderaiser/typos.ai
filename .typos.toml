@@ -1,6 +1,8 @@
 [files]
-extend-exclude = ["ChangeLog"]
+extend-exclude = ["ChangeLog", "eval/cases.json"]
 
 [default.extend-words]
 Deply = "Deply"
 neaded = "neaded"
+wich = "wich"
+tabel = "tabel"

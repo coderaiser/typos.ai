@@ -1,13 +1,14 @@
 name: Typos AI
-description: Run typos.ai checks
+description: Resolve ambiguous typos found by typos with a small local model
 inputs:
-  key:
-    description: ai key
-    required: true
   run:
     required: false
     default: "1"
     description: Run typos
+  dry:
+    required: false
+    default: ""
+    description: Do not write changes
 runs:
   using: composite
   steps:
@@ -15,6 +16,11 @@ runs:
       uses: oven-sh/setup-bun@v2
       with:
         bun-version: latest
+    - name: Cache model
+      uses: actions/cache@v4
+      with:
+        path: ${{ runner.temp }}/typos-ai
+        key: typos-ai-smollm2-135m-q4km-9e6855bc
     - shell: bash
       run: |
         echo "::group::Install"
@@ -24,5 +30,6 @@ runs:
     - shell: bash
       run: typos.ai
       env:
-        TYPOS_AI_KEY: ${{ inputs.key }}
+        TYPOS_AI_HOME: ${{ runner.temp }}/typos-ai
         TYPOS_AI_RUN: ${{ inputs.run }}
+        TYPOS_AI_DRY: ${{ inputs.dry }}

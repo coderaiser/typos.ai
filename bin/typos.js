@@ -1,45 +1,45 @@
 #!/usr/bin/env node
 
 import {
+    argv,
     env,
     cwd,
     exit,
 } from 'node:process';
-import {readStdin} from 'redstd';
 import chalk from 'chalk';
 import {typos} from '../lib/typos.js';
+import {runModels} from '../lib/cli/models.js';
+import {getCacheDir} from '../lib/cache.js';
 
-const {TYPOS_AI_KEY} = env;
+const [command, ...args] = argv.slice(2);
+const log = (message) => console.log(message);
 
-if (!TYPOS_AI_KEY)
-    console.error(chalk.yellow(`TYPOS_AI_KEY is missing`));
+const logFix = ({path, line_num, typo}, {output, margin}) => {
+    log(`${chalk.green('fix ')} ${path}:${line_num} ${typo} -> ${output} (margin ${margin.toFixed(1)})`);
+};
+
+const logSkip = ({path, line_num, typo}, reason) => {
+    log(`${chalk.yellow('skip')} ${path}:${line_num} ${typo}: ${reason}`);
+};
+
+if (command === 'models') {
+    await runModels({
+        args,
+        cacheDir: getCacheDir({
+            env,
+        }),
+        log,
+    });
+    
+    exit(0);
+}
 
 await typos({
     env,
     cwd,
-    readStdin,
-    exit,
     logs: {
-        logReject,
-        logRetry,
-        logError,
-        log: (a) => console.log(chalk.red(a)),
+        fix: logFix,
+        skip: logSkip,
     },
+    end: exit,
 });
-
-function logRetry(event) {
-    console.log('\x1b[31mLLM INVALID OUTPUT → RETRY\x1b[0m');
-    console.log(event);
-}
-
-function logReject(raw, event) {
-    console.log('\x1b[31mLLM FAILED AFTER RETRIES\x1b[0m');
-    console.log(raw);
-    console.log(event);
-}
-
-function logError(error, event) {
-    console.log('\x1b[31mLLM FAILED AFTER RETRIES\x1b[0m');
-    console.log(error);
-    console.log(event);
-}

@@ -27,20 +27,39 @@ When context needed to figure out for the world should be placed instead.
 npm i typos.ai -g
 ```
 
-# Usage
+(installs `node-llama-cpp`, about 800 MB on Linux because it ships several GPU builds)
+
+## Usage
 
 ```sh
-$ export TYPOS_AI_KEY=your-api-key
-$ typos --write-changes --format json | typos.ai
+typos --write-changes --format json | typos.ai
 ```
 
-or
+or let it run `typos` itself:
 
 ```sh
-$ export TYPOS_AI_KEY=your-api-key
-$ export TYPOS_AI_RUN=1
-$ typos.ai
+TYPOS_AI_RUN=1 typos.ai
 ```
+
+`typos` fixes typos with a single correction. `typos.ai` resolves the rest with a small local
+language model (SmolLM2-135M, ~105 MB, downloaded on first run to `~/.cache/typos.ai`). No API key,
+no network inference. Typos it is not confident about are printed and the exit code is 1.
+
+```sh
+typos.ai models list|pull|path
+```
+
+| Env | Default | Meaning |
+|---|---|---|
+| `TYPOS_AI_HOME` | `~/.cache/typos.ai` | cache for the model |
+| `TYPOS_AI_MODEL` | `smol` | registry name or path to a `.gguf` |
+| `TYPOS_AI_MIN_MARGIN` | `1` | minimum score gap between best and second candidate |
+| `TYPOS_AI_DRY` | unset | print decisions, do not write files |
+| `TYPOS_AI_OFFLINE` | unset | never download |
+| `TYPOS_AI_THREADS` | min(cpus, 4) | llama.cpp threads |
+| `TYPOS_AI_RUN` | unset | run `typos --write-changes --format json` internally |
+
+`TYPOS_AI_KEY` is no longer used (Groq was removed in 2.0.0).
 
 ## License
 
