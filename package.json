@@ -11,6 +11,7 @@
     "fresh:lint": "madrun fresh:lint",
     "lint:fresh": "madrun lint:fresh",
     "fix:lint": "madrun fix:lint",
+    "coverage:c8": "madrun coverage:c8",
     "coverage": "madrun coverage",
     "report": "madrun report"
   },
