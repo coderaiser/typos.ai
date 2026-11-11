@@ -1,6 +1,6 @@
 {
   "name": "typos.ai",
-  "version": "1.1.9",
+  "version": "2.0.0",
   "description": "CLI tool that resolves ambiguous typos found by typos using a small local language model",
   "main": "lib/typos.js",
   "type": "module",

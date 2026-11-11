@@ -1,3 +1,9 @@
+2026.11.12, v2.0.0
+
+feature:
+- 36140ed typos: migrate to local model
+- c45c61d typos.ai: chalk v6.0.1
+
 2026.07.13, v1.1.9
 
 fix:
