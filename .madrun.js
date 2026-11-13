@@ -1,8 +1,11 @@
 import {run} from 'madrun';
+import info from './package.json' with {type: 'json'}
 
 const env = {
     SUPERC8_RESPONSIVE: 1,
 };
+
+const parseVersion = (a) => a.split('.').at(0);
 
 export default {
     'test': () => `tape 'lib/**/*.spec.js' 'test/*.js'`,
@@ -14,4 +17,8 @@ export default {
     'coverage:c8': async () => [env, `c8 ${await run('test')}`],
     'coverage': async () => [env, `escover "${await run('test')}"`],
     'report': () => 'c8 report --reporter=lcov',
+    'wisdom:done': () => {
+        const version = parseVersion(info.version);
+        return `git tag -f v${version} && git push origin v${version}`;
+    },
 };

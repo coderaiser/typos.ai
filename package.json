@@ -13,7 +13,8 @@
     "fix:lint": "madrun fix:lint",
     "coverage:c8": "madrun coverage:c8",
     "coverage": "madrun coverage",
-    "report": "madrun report"
+    "report": "madrun report",
+    "wisdom:done": "madrun wisdom:done"
   },
   "repository": {
     "type": "git",
