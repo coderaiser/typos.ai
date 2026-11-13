@@ -43,7 +43,7 @@ TYPOS_AI_RUN=1 typos.ai
 
 `typos` fixes typos with a single correction. `typos.ai` resolves the rest with a small local
 language model (SmolLM2-135M, ~105 MB, downloaded on first run to `~/.cache/typos.ai`). No API key,
-no network inference. Typos it is not confident about are printed and the exit code is 1.
+no network inference. When the model is not confident (margin below `TYPOS_AI_MIN_MARGIN`), it rescores with more context (1, 3, then 6 lines each side) and uses the best candidate found. Typos without suggestions are skipped silently (set `TYPOS_AI_VERBOSE=1` to print them) and the exit code stays 0.
 
 ```sh
 typos.ai models list|pull|path
@@ -54,6 +54,7 @@ typos.ai models list|pull|path
 | `TYPOS_AI_HOME` | `~/.cache/typos.ai` | cache for the model |
 | `TYPOS_AI_MODEL` | `smol` | registry name or path to a `.gguf` |
 | `TYPOS_AI_MIN_MARGIN` | `1` | minimum score gap between best and second candidate |
+| `TYPOS_AI_VERBOSE` | | print skipped typos (no suggestions) |
 | `TYPOS_AI_DRY` | unset | print decisions, do not write files |
 | `TYPOS_AI_OFFLINE` | unset | never download |
 | `TYPOS_AI_THREADS` | min(cpus, 4) | llama.cpp threads |

@@ -18,7 +18,14 @@ const logFix = ({path, line_num, typo}, {output, margin}) => {
     log(`${chalk.green('fix ')} ${path}:${line_num} ${typo} -> ${output} (margin ${margin.toFixed(1)})`);
 };
 
+const logIgnore = ({path, line_num, typo}, {margin}) => {
+    log(`${chalk.cyan('keep')} ${path}:${line_num} ${typo} is not a typo, added to .typos.toml (margin ${margin.toFixed(1)})`);
+};
+
 const logSkip = ({path, line_num, typo}, reason) => {
+    if (!env.TYPOS_AI_VERBOSE)
+        return;
+    
     log(`${chalk.yellow('skip')} ${path}:${line_num} ${typo}: ${reason}`);
 };
 
@@ -39,7 +46,7 @@ await typos({
     cwd,
     logs: {
         fix: logFix,
+        ignore: logIgnore,
         skip: logSkip,
     },
-    end: exit,
 });
